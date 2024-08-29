@@ -5,3 +5,9 @@
 .text-shadow {
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+
+.happy {
+  font-family: "Happy Monkey", system-ui;
+  font-weight: 550;
+  font-style: normal;
+}
