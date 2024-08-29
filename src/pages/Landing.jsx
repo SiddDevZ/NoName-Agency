@@ -13,14 +13,14 @@ const Landing = () => {
         <main className="w-[90vw] z-20 md:w-[80vw] max-w-[1920px] mx-auto pt-5">
           <Navbar />
           <div className="pt-[6.9rem] text-center">
-            <h1 className="font-serif text-[5.4vw] leading-[1.15]">
+            <h1 className="font-serif text-[105px] leading-[1.15]">
               Get Your Website
               <span className="block mt-0">
                 Built by{" "}
                 <span className="text-[#00982a] relative">Experts</span>
               </span>
             </h1>
-            <h3 className="font-pop text-[1vw] font-semibold tracking-[0.05em] mt-[3vh] text-center text-[#383838]">
+            <h3 className="font-pop text-[1rem] font-semibold tracking-[0.05em] mt-[3vh] text-center text-[#383838]">
               We create beautiful, fast websites that are designed to <br />{" "}
               elevate your brand and engage your audience.
             </h3>
