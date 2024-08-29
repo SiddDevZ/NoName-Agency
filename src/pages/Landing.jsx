@@ -12,7 +12,7 @@ const Landing = () => {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className="w-[90vw] z-20 md:w-[80vw] max-w-[1920px] mx-auto pt-5">
           <Navbar />
-          <div className="pt-[7.188vw] text-center">
+          <div className="pt-[6.9rem] text-center">
             <h1 className="font-serif text-[5.4vw] leading-[1.15]">
               Get Your Website
               <span className="block mt-0">
@@ -24,15 +24,15 @@ const Landing = () => {
               We create beautiful, fast websites that are designed to <br />{" "}
               elevate your brand and engage your audience.
             </h3>
-            <div className="space-x-4 mt-[1.563vw]">
-              <button className="px-[2.24vw] py-[0.625vw] bg-[#158941] border border-[#158941] transition-all hover:bg-[#127638] hover:border-[#127638] text-white text-[1.172vw] font-pop font-medium rounded-full">
+            <div className="space-x-4 mt-6">
+              <button className="px-[2.15rem] py-[0.6rem] bg-[#158941] border border-[#158941] transition-all hover:bg-[#127638] hover:border-[#127638] text-white text-lg font-pop font-medium rounded-full">
                 Inquire Now
               </button>
-              <button className="px-[2.24vw] py-[0.625vw] border border-black text-black text-[1.172vw] font-pop font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
+              <button className="px-[2.15rem] py-[0.6rem] border border-black text-black text-lg font-pop font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
                 View Projects
               </button>
             </div>
-            <h5 className="mt-3 text-[0.911vw] leading-5 opacity-50 italic">No Signup needed, No subscription required.</h5>
+            <h5 className="mt-3 text-sm leading-5 opacity-50 italic">No Signup needed, No subscription required.</h5>
  
           </div>
         </main>
