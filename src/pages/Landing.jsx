@@ -1,8 +1,8 @@
-import React from "react";
-import Layout from ".././components/Layout/layout";
-import Card from ".././components/Card";
-import Navbar from ".././components/Navbar";
-import Button from ".././components/Button";
+import React from 'react';
+import Layout from '.././components/Layout/layout';
+import Card from '.././components/Card';
+import Navbar from '.././components/Navbar';
+import Button from '.././components/Button';
 
 const Landing = () => {
   return (
@@ -16,12 +16,12 @@ const Landing = () => {
             <h1 className="font-serif text-[5.3rem] leading-[1.15]">
               Get Your Website
               <span className="block mt-0">
-                Built by{" "}
+                Built by{' '}
                 <span className="text-[#00982a] relative">Experts</span>
               </span>
             </h1>
             <h3 className="font-pop text-[1rem] font-semibold tracking-[0.05em] mt-[3vh] text-center text-[#383838]">
-              We create beautiful, fast websites that are designed to <br />{" "}
+              We create beautiful, fast websites that are designed to <br />{' '}
               elevate your brand and engage your audience.
             </h3>
             <div className="space-x-4 mt-6">
@@ -32,6 +32,9 @@ const Landing = () => {
                 View Projects
               </button>
             </div>
+            <h5 className="mt-3 text-sm leading-5 opacity-50 italic">
+              No Signup needed, No subscription required.
+            </h5>
             <h5 className="mt-3 text-sm leading-5 opacity-50 italic">No Signup needed, No subscription required.</h5>
             <div className="flex justify-center items-center mt-8 space-x-8 opacity-90">
               <img src="google.png" alt="Google Logo" className="h-12 w-auto" />
