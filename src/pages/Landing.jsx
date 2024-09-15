@@ -3,7 +3,6 @@ import Layout from '.././components/Layout/layout';
 import Card from '.././components/Card';
 import Navbar from '.././components/Navbar';
 import Button from '.././components/Button';
-import Projects from '../components/Projects';
 
 const Landing = () => {
   return (
@@ -39,7 +38,6 @@ const Landing = () => {
           </div>
         </main>
       </div>
-      <Projects />
     </>
   );
 };
