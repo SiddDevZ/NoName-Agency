@@ -4,6 +4,12 @@ import Card from '.././components/Card';
 import Navbar from '.././components/Navbar';
 import Button from '.././components/Button';
 import Footer from '../components/Footer';
+import React from 'react';
+import Layout from '.././components/Layout/layout';
+import Card from '.././components/Card';
+import Navbar from '.././components/Navbar';
+import Button from '.././components/Button';
+import Meetings from '../components/Meetings';
 
 const Landing = () => {
   return (
