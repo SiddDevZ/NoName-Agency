@@ -14,7 +14,7 @@ const Navbar = () => {
         <a href="/blog">Blog</a>
       </div>
 
-      <button className="rounded-full py-1 px-6 text-[#00982a] text-[22px] bg-[rgb(0,187,52,0.12)]">
+      <button className="rounded-full py-1 px-6 text-[#00982a] hover:text-white hover:bg-[#29af38] transition-all duration-150 text-[22px] bg-[rgb(0,187,52,0.12)]">
         Contact
       </button>
     </nav>

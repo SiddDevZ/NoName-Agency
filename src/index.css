@@ -11,3 +11,41 @@
   font-weight: 550;
   font-style: normal;
 }
+
+.logo-carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.logo-carousel {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 25%; /* Adjust based on how many logos you want visible at once */
+  padding: 0 20px;
+  opacity: 0;
+  animation: fade 5s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
+}
