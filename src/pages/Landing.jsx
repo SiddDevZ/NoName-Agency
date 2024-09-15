@@ -32,9 +32,6 @@ const Landing = () => {
                 View Projects
               </button>
             </div>
-            <h5 className="mt-3 text-sm leading-5 opacity-50 italic">
-              No Signup needed, No subscription required.
-            </h5>
             <h5 className="mt-3 text-sm leading-5 opacity-50 italic">No Signup needed, No subscription required.</h5>
             <div className="flex justify-center items-center mt-8 space-x-8 opacity-90">
               <img src="google.png" alt="Google Logo" className="h-12 w-auto" />
