@@ -2,9 +2,13 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-black bg-opacity-[0.03] backdrop-blur-md rounded-xl h-14 p-1 flex justify-between items-center px-6 font-[inter]">
+    <nav className="w-full bg-black bg-opacity-[0.03] backdrop-blur-md rounded-xl h-14 p-1 flex justify-between items-center px-6 font-[inter] md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto">
       <span className="space-x-[0.6rem] flex items-center font-semibold">
-        <img src="./ph_shower-bold.png" alt="masked logo" className='w-[1.9rem]' />
+        <img
+          src="./ph_shower-bold.png"
+          alt="masked logo"
+          className="w-[1.9rem]"
+        />
         <h1 className="text-2xl">Masked</h1>
       </span>
 

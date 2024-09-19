@@ -5,47 +5,65 @@ import Card from '.././components/Card';
 import Navbar from '.././components/Navbar';
 import Button from '.././components/Button';
 import Meetings from '../components/Meetings';
+import Projects from '../components/Projects';
 
 const Landing = () => {
   return (
     <>
-      <div className="h-[50rem] w-full  bg-white  bg-grid-black/[0.04] relative flex">
-        {/* Radial gradient for the container to give a faded look */}
+      <div className="w-full bg-white   relative flex mx-auto">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
-        <main className="sm:w-[90vw] xss:w-[95vw] z-20 md:w-[80vw] max-w-[1920px] mx-auto pt-5">
-          <Navbar />
-          <div className="pt-[6.9rem] text-center">
-            <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[10.3vw] leading-[1.15]">
-              Get Your Website
-              <span className="block mt-0">
-                Built by{' '}
-                <span className="text-[#00982a] relative">Experts</span>
-              </span>
-            </h1>
-            <h3 className="font-pop lg:text-[1rem] md:text-[0.8rem] sm:text-[0.8rem] xs:text-[2.3vw] xss:text-[2.2vw] font-semibold tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
-              We create beautiful, fast websites that are designed to <br />{' '}
-              elevate your brand and engage your audience.
-            </h3>
-            <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
-              <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
-                Inquire Now
-              </button>
-              <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
-                View Projects
-              </button>
-            </div>
-            <h5 className="sm:mt-3 xss:mt-1.5 sm:text-sm xss:text-xs leading-5 opacity-50 italic">
-              No Signup needed, No subscription required.
-            </h5>
-            <div className="flex justify-center items-center sm:mt-8 xss:mt-5 space-x-8 opacity-90 sm:space-x-4 xs:space-x-3 xss:space-x-2.5">
-              <img src="google.png" alt="Google Logo" className="h-12 w-auto sm:h-10 xs:h-[8vw] xss:h-[8vw]" />
-              <img src="buzz.png" alt="Buzz Logo" className="h-24 w-auto sm:h-20 xs:h-[16vw] xss:h-[14vw]" />
-              <img src="mit.png" alt="MIT Logo" className="h-8 w-auto sm:h-7 xs:h-[5vw] xss:h-[4.6vw]" />
-              <img src="forbes.png" alt="Forbes Logo" className="h-10 w-auto sm:h-8 xs:h-[6vw] xss:h-[6vw]" />
+        <main className=" z-20 mx-auto">
+          <div className="bg-grid-black/[0.04] pt-5">
+            <Navbar />
+            <div className="pt-[6.9rem] text-center">
+              <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[10.3vw] leading-[1.15]">
+                Get Your Website
+                <span className="block mt-0">
+                  Built by{' '}
+                  <span className="text-[#00982a] relative">Experts</span>
+                </span>
+              </h1>
+              <h3 className="font-pop lg:text-[1rem] md:text-[0.8rem] sm:text-[0.8rem] xs:text-[2.3vw] xss:text-[2.2vw] font-semibold tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
+                We create beautiful, fast websites that are designed to <br />{' '}
+                elevate your brand and engage your audience.
+              </h3>
+              <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
+                <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+                  Inquire Now
+                </button>
+                <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
+                  View Projects
+                </button>
+              </div>
+              <h5 className="sm:mt-3 xss:mt-1.5 sm:text-sm xss:text-xs leading-5 opacity-50 italic">
+                No Signup needed, No subscription required.
+              </h5>
+              <div className="flex justify-center items-center sm:mt-8 xss:mt-5 space-x-8 opacity-90 sm:space-x-4 xs:space-x-3 xss:space-x-2.5">
+                <img
+                  src="google.png"
+                  alt="Google Logo"
+                  className="h-12 w-auto sm:h-10 xs:h-[8vw] xss:h-[8vw]"
+                />
+                <img
+                  src="buzz.png"
+                  alt="Buzz Logo"
+                  className="h-24 w-auto sm:h-20 xs:h-[16vw] xss:h-[14vw]"
+                />
+                <img
+                  src="mit.png"
+                  alt="MIT Logo"
+                  className="h-8 w-auto sm:h-7 xs:h-[5vw] xss:h-[4.6vw]"
+                />
+                <img
+                  src="forbes.png"
+                  alt="Forbes Logo"
+                  className="h-10 w-auto sm:h-8 xs:h-[6vw] xss:h-[6vw]"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="mt-96 mb-96 w-full">
+          <div className="mt-96 mb-96 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px] mx-auto">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
               About Us
             </h2>
@@ -103,6 +121,7 @@ const Landing = () => {
               </div>
             </div>
           </div>
+          <Projects />
           <Footer />
         </main>
       </div>
