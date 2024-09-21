@@ -65,8 +65,10 @@ const Landing = () => {
 
           {/* To Do = Fix stutter */}
           <Projects /> 
-
-          <div className="mt-96 mb-96 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px]">
+          <div className='flex justify-center'>
+            <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-50"></div>
+          </div>
+          <div className="mb-96 mt-7 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px]">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
               About Us
             </h2>

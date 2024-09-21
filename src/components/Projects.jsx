@@ -58,7 +58,7 @@ const Projects = () => {
 
   return (
     <div
-      className="w-[100vw] overflow-hidden"
+      className="w-[100vw] overflow-hidden "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
