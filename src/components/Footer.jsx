@@ -9,7 +9,7 @@ const Footer = () => {
             We Don't Just Build <br />
             Websites, <span className="text-[#00982a]">We Build Dreams</span>
           </h3>
-          <nav className="flex lg:gap-6 md:gap-2">
+          <nav className=" lg:gap-6 md:gap-2 hidden xs:flex">
             <img
               src="mdi_linkedin.png"
               alt=""
@@ -28,13 +28,15 @@ const Footer = () => {
           </nav>
         </div>
         <div className="font-[poppins] w-full flex justify-between">
-          <div className="space-y-2">
-            <p className="font-medium 2xl:text-[16px] text-[12px]">Email us:</p>
+          <div className="xs:space-y-2">
+            <p className="font-medium 2xl:text-[16px] text-[12px] text-black/60">
+              Email us:
+            </p>
             <p className="2xl:text-[24px] xs:text-[18px] text-[16px]">
               hello@masked.com
             </p>
           </div>
-          <div className="flex gap-4 items-center">
+          <div className="xs:gap-4 gap-2 items-center hidden xs:flex">
             <img
               src="ph_shower-bold.png"
               alt=""
@@ -44,6 +46,23 @@ const Footer = () => {
               Masked
             </p>
           </div>
+          <nav className="flex xs:hidden gap-2">
+            <img
+              src="mdi_linkedin.png"
+              alt=""
+              className="2xl:h-[74px] md:h-[50px] h-[40px] w-auto"
+            />
+            <img
+              src="mdi_github.png"
+              alt=""
+              className="2xl:h-[74px] md:h-[50px] h-[40px] w-auto"
+            />
+            <img
+              src="ic_outline-discord.png"
+              alt=""
+              className="2xl:h-[74px] md:h-[50px] h-[40px] w-auto"
+            />
+          </nav>
         </div>
       </div>
     </div>
