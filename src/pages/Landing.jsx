@@ -13,25 +13,25 @@ const Landing = () => {
       <div className="w-full bg-white   relative flex mx-auto">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className=" z-20 mx-auto">
-          <div className="bg-grid-black/[0.04] pt-5">
+          <div className="bg-grid-black/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
             <Navbar />
-            <div className="pt-[6.9rem] text-center">
-              <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[10.3vw] leading-[1.15]">
+            <div className="sm:pt-[6.9rem] xss:pt-[15vh] text-center">
+              <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[11.2vw] leading-[1.15]">
                 Get Your Website
                 <span className="block mt-0">
                   Built by{' '}
                   <span className="text-[#00982a] relative">Experts</span>
                 </span>
               </h1>
-              <h3 className="font-pop lg:text-[1rem] md:text-[0.8rem] sm:text-[0.8rem] xs:text-[2.3vw] xss:text-[2.2vw] font-semibold tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
-                We create beautiful, fast websites that are designed to <br />{' '}
-                elevate your brand and engage your audience.
+              <h3 className="font-pop md:max-w-[31rem] sm:max-w-[25rem] xs:max-w-[25rem] xss:max-w-[80%] mx-auto lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] xs:text-[0.75rem] xss:text-[0.75rem] font-medium tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
+                We create beautiful, fast websites that are designed to
+                Increase conversions and boost your online presence.
               </h3>
               <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
-                <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+                <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
                   Inquire Now
                 </button>
-                <button className="px-[4.5vw] py-[1.7vw] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
+                <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
                   View Projects
                 </button>
               </div>
@@ -63,7 +63,10 @@ const Landing = () => {
             </div>
           </div>
 
-          <div className="mt-96 mb-96 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px] mx-auto">
+          {/* To Do = Fix stutter */}
+          <Projects /> 
+
+          <div className="mt-96 mb-96 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px]">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
               About Us
             </h2>
@@ -120,8 +123,7 @@ const Landing = () => {
                 </button>
               </div>
             </div>
-          </div>
-          <Projects />
+          </div> 
           <Footer />
         </main>
       </div>
