@@ -65,19 +65,19 @@ const Landing = () => {
 
           {/* To Do = Fix stutter */}
           <Projects /> 
-          <div className='flex justify-center'>
-            <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-50"></div>
-          </div>
-          <div className="mb-96 mt-7 md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto max-w-[1920px]">
+          {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
+            {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
+          {/* </div> */}
+          <div className="mb-96 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto max-w-[1920px]">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
               About Us
             </h2>
-            <div className="mt-4 flex w-full">
-              <div className="w-[50%]">
-                <h2 className="font-serif text-[3.1rem] leading-[1.15]">
+            <div className="mt-4 md:flex justify-between w-full">
+              <div className="w-[50%] md:mb-[0rem] xss:mb-[1rem]">
+                <h2 className="font-serif lg:text-[3.1vw] md:text-[2rem] xss:text-[1.9rem] sm:text-[2rem] min-w-[490px] leading-[1.15]">
                   Creating Websites That <br /> Increase Your Sales
                 </h2>
-                <div className="flex items-center space-x-4 mt-6">
+                <div className="flex items-center space-x-4 md:mt-6 xss:mt-4 w-[490px]">
                   <div className="flex -space-x-4">
                     {[1, 2, 3].map((index) => (
                       <div
@@ -112,8 +112,8 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[50%]">
-                <p className="font-pop text-[1.04rem] tracking-[-0.002em] leading-[1.45rem]">
+              <div className="lg:w-[50%] md:w-[45%]">
+                <p className="font-pop lg:text-[1.04rem] md:text-[0.9rem] xss:text-[0.85rem] tracking-[-0.002em] lg:leading-[1.45rem] md:leading-[1.3rem] xss:leading-[1.25rem]">
                   We specialize in designing and developing stunning websites
                   that are optimized to drive conversions. By blending
                   creativity with strategic design, we turn visitors into loyal
