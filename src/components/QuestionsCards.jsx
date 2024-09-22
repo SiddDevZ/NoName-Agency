@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const QuestionCard = ({ question, index, setHoveredIndex }) => {
   return (
     <div
-      className="relative flex items-center justify-between p-4 border-b border-black"
+      className="relative flex items-center justify-between p-3 border-b border-black w-full"
       onMouseEnter={() => setHoveredIndex(index)}
       data-index={index}
     >
@@ -46,20 +46,27 @@ const AdoptionQuestions = () => {
   }, [hoveredIndex]);
 
   return (
-    <div className="relative max-w-[991px] mx-auto bg-white shadow-md overflow-hidden font-[poppins]">
-      <div
-        className="absolute left-0 w-full bg-black/5 transition-all duration-300 ease-in-out"
-        style={hoverStyle}
-      />
-      <div ref={containerRef} onMouseLeave={() => setHoveredIndex(null)}>
-        {questions.map((question, index) => (
-          <QuestionCard
-            key={index}
-            question={question}
-            index={index}
-            setHoveredIndex={setHoveredIndex}
+    <div className="md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] relative mx-auto bg-white font-[poppins] flex">
+      <div className="flex w-full mx-auto justify-between gap-24">
+        <div
+          ref={containerRef}
+          onMouseLeave={() => setHoveredIndex(null)}
+          className="w-full"
+        >
+          <div
+            className="absolute left-0 w-full bg-black/5 transition-all duration-300 ease-in-out"
+            style={hoverStyle}
           />
-        ))}
+          {questions.map((question, index) => (
+            <QuestionCard
+              key={index}
+              question={question}
+              index={index}
+              setHoveredIndex={setHoveredIndex}
+            />
+          ))}
+        </div>
+        <div className="bg-gray-400 h-full aspect-square rounded-xl"></div>
       </div>
     </div>
   );
