@@ -2,14 +2,14 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="w-full text-gray-800 rounded-2xl h-14 p-2 flex justify-between items-center px-8 font-['Inter'] md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto sm:bg-white/10 sm:backdrop-filter sm:backdrop-blur-3xl sm:shadow-sm">
-      <span className="flex items-center space-x-3">
+    <nav className="w-full text-gray-800 rounded-2xl h-14 p-2 flex justify-between items-center px-8 font-['Inter'] md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto sm:bg-white/10 sm:backdrop-filter sm:backdrop-blur-3xl sm:border">
+      <span className="flex items-center space-x-3 group">
         <img
           src="./ph_shower-bold.png"
           alt="masked logo"
-          className="w-8 h-8 transition-transform duration-300 hover:rotate-12 xs:w-7 xs:h-7 xss:w-6 xss:h-6"
+          className="w-8 h-8 transition-transform duration-300 group-hover:rotate-12 xs:w-7 xs:h-7 xss:w-6 xss:h-6"
         />
-        <h1 className="text-2xl font-bold tracking-tight xs:text-xl xss:text-lg">Masked</h1>
+        <h1 className="text-2xl unselectable font-bold tracking-tight xs:text-xl xss:text-lg">Masked</h1>
       </span>
 
       <div className="text-lg flex lg:gap-12 gap-8 sm:flex xss:hidden">

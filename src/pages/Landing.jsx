@@ -10,7 +10,7 @@ import Projects from '../components/Projects';
 const Landing = () => {
   return (
     <>
-      <div className="w-full bg-white   relative flex mx-auto">
+      <div className="w-full bg-white   relative flex mx-auto animate-in">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className=" z-20 mx-auto">
           <div className="bg-grid-black/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
@@ -68,7 +68,7 @@ const Landing = () => {
           {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
             {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
           {/* </div> */}
-          <div className="mb-96 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto max-w-[1920px]">
+          <div className=" pb-14 border-b border-black/30 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92vw] mx-auto max-w-[1920px]">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
               About Us
             </h2>
@@ -120,12 +120,40 @@ const Landing = () => {
                   customers. Our journey began with a simple mission, to deliver
                   high quality development at affordable prices.
                 </p>
-                <button className="px-[1.42rem] mt-5 py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-base font-pop font-medium rounded-full">
+                <button className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
                   Let's Chat
                 </button>
               </div>
             </div>
           </div> 
+          <div className='pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
+            <h2 className='font-serif text-5xl text-center'>Problems Being Faced</h2>
+            <div className='flex flex-wrap justify-center mt-14'>
+              {[
+                {imageUrl: "icon-park_attention.png", rgb: true, title: "Outdated Designs", description: "Outdated websites fail to capture users attention, and engage them, often appearing less credible and less appealing."},
+                {imageUrl: "fxemoji_moneybag.png", rgb: true, title: "Costly Developers", description: "With an average developer salary of $110,585 in USA, costs can be high. We provide the same quality work for a fraction of the price."},
+                {imageUrl: "time.png", rgb: true, title: "Slow Development", description: "Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results."}
+              ].map((card, index, array) => (
+                <div key={index} className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${array.length > 1 ? 'px-4' : ''}`}>
+                  <Card imageUrl={card.imageUrl} title={card.title} rgb={card.rgb} description={card.description} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='mb-96 pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
+            <h2 className='font-serif text-5xl text-center text-[#00982a]'>Our Approach</h2>
+            <div className='flex flex-wrap justify-center mt-14'>
+              {[
+                {imageUrl: "responsive.png", rgb: false, title: "Fully Responsive", description: "Your website will work on all mobile, tablets, and desktop screen sizes, so your clients can access your website from anywhere."},
+                {imageUrl: "conver.png", rgb: false, title: "Conversion Focused", description: "We craft an experience that engages and converts, turning visitors into loyal customers, by focusing on what drives them to action."},
+                {imageUrl: "moni.png", rgb: false, title: "Affordable", description: "Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results."}
+              ].map((card, index, array) => (
+                <div key={index} className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${array.length > 1 ? 'px-4' : ''}`}>
+                  <Card imageUrl={card.imageUrl} title={card.title} rgb={card.rgb} description={card.description} />
+                </div>
+              ))}
+            </div>
+          </div>
           <Footer />
         </main>
       </div>
