@@ -140,7 +140,7 @@ const Landing = () => {
               ))}
             </div>
           </div>
-          <div className='mb-96 pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
+          <div className='pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
             <h2 className='font-serif text-5xl text-center text-[#00982a]'>Our Approach</h2>
             <div className='flex flex-wrap justify-center mt-14'>
               {[
@@ -152,6 +152,21 @@ const Landing = () => {
                   <Card imageUrl={card.imageUrl} title={card.title} rgb={card.rgb} description={card.description} />
                 </div>
               ))}
+            </div>
+          </div>
+          <div className='mb-96 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full'>
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/50 backdrop-blur-md"></div>
+              <h2 className='relative z-10 text-center text-[3.5rem] font-[libre] leading-[1.15]'>
+                Your website is your <span className='text-[#007D98]'>24/7 salesman</span> <br />
+                Don't just settle for an ordinary one. <br />
+                Go <span className='text-[#00982A]'>beyond</span> with Masked
+              </h2>
+            </div>
+            <div className='flex mt-7 w-full justify-center'>
+              <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+              Schedule a Meeting
+              </button>
             </div>
           </div>
           <Footer />
