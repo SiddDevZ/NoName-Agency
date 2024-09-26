@@ -3,7 +3,7 @@ import Layout from '.././components/Layout/layout';
 import Footer from '../components/Footer';
 import Card from '.././components/Card';
 import Navbar from '.././components/Navbar';
-import Button from '.././components/Button';
+import QuestionsCards from '.././components/QuestionsCards';
 import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
 
@@ -154,20 +154,23 @@ const Landing = () => {
               ))}
             </div>
           </div>
-          <div className='mb-96 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full'>
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/50 backdrop-blur-md"></div>
-              <h2 className='relative z-10 text-center text-[3.5rem] font-[libre] leading-[1.15]'>
-                Your website is your <span className='text-[#007D98]'>24/7 salesman</span> <br />
-                Don't just settle for an ordinary one. <br />
-                Go <span className='text-[#00982A]'>beyond</span> with Masked
+          <div className='mb-24 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full'>
+            <div className="relative w-full">
+              <h2 className='relative z-10  text-center text-[1.8rem] xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6'>
+                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">Your website is your <span className='text-[#007D98]'>24/7 salesman<span className='xss:opacity-100 sm:opacity-0'>.</span></span></span>
+                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">Don't just settle for an ordinary one.</span>
+                <span className="bg-white sm:px-2 px-1 sm:inline-block">Go <span className='text-[#00982A]'>beyond</span> with Masked</span>
               </h2>
             </div>
-            <div className='flex mt-7 w-full justify-center'>
+            <div className='flex mt-8 w-full justify-center'>
               <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
               Schedule a Meeting
               </button>
             </div>
+          </div>
+          <div className='mb-32'>
+            <h2 className='font-serif text-5xl text-center mb-10'>Questions? Answers.</h2>
+            <QuestionsCards />
           </div>
           <Footer />
         </main>

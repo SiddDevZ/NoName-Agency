@@ -1,16 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const QuestionCard = ({ question, index, setHoveredIndex }) => {
+const QuestionCard = ({ question, answer, index, setHoveredIndex, isOpen, toggleQuestion }) => {
   return (
     <div
-      className="relative flex items-center justify-between p-3 border-b border-black w-full"
+      className="relative flex flex-col items-start p-3 border-b border-black w-full cursor-pointer"
       onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+      onClick={() => toggleQuestion(index)}
       data-index={index}
     >
-      <p className="text-[28px]">{question}</p>
-      <button className="rounded-full border border-black leading-none w-8 h-8 text-[32px]">
-        +
-      </button>
+      <div className="w-full flex items-center justify-between">
+        <p className="text-[26px] unselectable">{question}</p>
+        <button 
+          className="rounded-full border border-black leading-none w-7 h-7 text-[25px] transition-transform duration-300"
+          style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
+        >
+          +
+        </button>
+      </div>
+      <div 
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: isOpen ? '1000px' : '0', opacity: isOpen ? 1 : 0 }}
+      >
+        <p className="text-[18px] mt-3">{answer}</p>
+      </div>
     </div>
   );
 };
@@ -18,6 +31,7 @@ const QuestionCard = ({ question, index, setHoveredIndex }) => {
 const AdoptionQuestions = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverStyle, setHoverStyle] = useState({});
+  const [openQuestions, setOpenQuestions] = useState({});
   const containerRef = useRef(null);
 
   const questions = [
@@ -27,46 +41,74 @@ const AdoptionQuestions = () => {
     'What are the costs associated with adoption?',
     'How can I prepare for adopting a child?',
   ];
+  const answers = [
+    "There are several ways to find out if you're adopted, including asking your parents, checking birth records, or taking a DNA test.",
+    'Requirements typically include a home study, background checks, financial stability, and completion of adoption education classes.',
+    'The adoption process can take anywhere from several months to several years, depending on various factors and the type of adoption.',
+    'Adoption costs can range from $0 to $50,000 or more, depending on the type of adoption and associated fees.',
+    'Preparing for adoption involves education, emotional readiness, creating a support network, and preparing your home and lifestyle for a child.'
+  ]
 
   useEffect(() => {
-    if (hoveredIndex !== null && containerRef.current) {
-      const cards = containerRef.current.querySelectorAll('[data-index]');
-      const card = cards[hoveredIndex];
-      if (card) {
-        const { offsetTop, offsetHeight } = card;
-        setHoverStyle({
-          top: `${offsetTop}px`,
-          height: `${offsetHeight}px`,
-          opacity: 1,
-        });
+    const updateHoverStyle = () => {
+      if (hoveredIndex !== null && containerRef.current) {
+        const cards = containerRef.current.querySelectorAll('[data-index]');
+        const card = cards[hoveredIndex];
+        if (card) {
+          const { offsetTop, offsetHeight } = card;
+          const isOpen = openQuestions[hoveredIndex];
+          setHoverStyle({
+            top: `${offsetTop}px`,
+            height: isOpen ? `${offsetHeight}px` : '62px', // Adjust '57px' to match your closed question height
+            opacity: 1,
+          });
+        }
+      } else {
+        setHoverStyle({ opacity: 0 });
       }
-    } else {
-      setHoverStyle({ opacity: 0 });
-    }
-  }, [hoveredIndex]);
+    };
+
+    updateHoverStyle();
+
+    // Add a small delay to ensure the DOM has updated
+    const timeoutId = setTimeout(updateHoverStyle, 50);
+
+    return () => clearTimeout(timeoutId);
+  }, [hoveredIndex, openQuestions]);
+
+  const toggleQuestion = (index) => {
+    setOpenQuestions(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   return (
     <div className="md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] relative mx-auto bg-white font-[poppins] flex">
       <div className="flex w-full mx-auto justify-between gap-24">
-        <div
-          ref={containerRef}
-          onMouseLeave={() => setHoveredIndex(null)}
-          className="w-full"
-        >
+        <div className="flex-1 relative">
           <div
-            className="absolute left-0 w-full bg-black/5 transition-all duration-300 ease-in-out"
-            style={hoverStyle}
-          />
-          {questions.map((question, index) => (
-            <QuestionCard
-              key={index}
-              question={question}
-              index={index}
-              setHoveredIndex={setHoveredIndex}
+            ref={containerRef}
+            className="w-full"
+          >
+            <div
+              className="absolute left-0 w-full bg-black/5 transition-all duration-300 ease-in-out"
+              style={hoverStyle}
             />
-          ))}
+            {questions.map((question, index) => (
+              <QuestionCard
+                key={index}
+                question={question}
+                answer={answers[index]}
+                index={index}
+                setHoveredIndex={setHoveredIndex}
+                isOpen={openQuestions[index]}
+                toggleQuestion={toggleQuestion}
+              />
+            ))}
+          </div>
         </div>
-        <div className="bg-gray-400 h-full aspect-square rounded-xl"></div>
+        <div className="bg-gray-400 w-1/4 aspect-square rounded-xl"></div>
       </div>
     </div>
   );
