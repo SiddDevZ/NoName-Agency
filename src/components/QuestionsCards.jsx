@@ -22,7 +22,7 @@ const QuestionCard = ({ question, answer, index, setHoveredIndex, isOpen, toggle
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: isOpen ? '1000px' : '0', opacity: isOpen ? 1 : 0 }}
       >
-        <p className="text-[18px] mt-3">{answer}</p>
+        <p className="text-[18px] text-[#686868] mt-3">{answer}</p>
       </div>
     </div>
   );
@@ -108,7 +108,15 @@ const AdoptionQuestions = () => {
             ))}
           </div>
         </div>
-        <div className="bg-gray-400 w-1/4 aspect-square rounded-xl"></div>
+        <div className="hidden md:flex bg-[#F1F1F1] w-1/4 aspect-square rounded-xl flex-col align-middle justify-center mx-auto">
+          <h2 className='text-center text-[5.25rem] leading-7 mb-11'>🤔</h2>
+          <h2 className='text-center font-bold font-inter text-2xl'>Have more Questions? <br />Book a FREE Call</h2>
+          <div className="flex justify-center mt-5">
+            <button className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
+              Book a Call
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
