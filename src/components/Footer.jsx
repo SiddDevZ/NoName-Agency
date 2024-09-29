@@ -32,9 +32,14 @@ const Footer = () => {
             <p className="font-medium 2xl:text-[16px] text-[12px] text-black/60">
               Email us:
             </p>
-            <p className="2xl:text-[24px] xs:text-[18px] text-[16px]">
+            <a
+              href="mailto:hello@masked.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="2xl:text-[24px] xs:text-[18px] text-[16px] hover:underline"
+            >
               hello@masked.com
-            </p>
+            </a>
           </div>
           <div className="xs:gap-4 gap-1 items-center hidden xs:flex">
             <img

@@ -72,7 +72,7 @@ const QuestionCard = React.memo(
   }
 );
 
-const AdoptionQuestions = () => {
+const AdoptionQuestions = ({ redirect }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverStyle, setHoverStyle] = useState({});
   const [openQuestions, setOpenQuestions] = useState({});
@@ -172,7 +172,7 @@ const AdoptionQuestions = () => {
             Book a FREE Call
           </h2>
           <div className="flex justify-center mt-5">
-            <button className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
+            <button onClick={() => redirect()} className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
               Book a Call
             </button>
           </div>

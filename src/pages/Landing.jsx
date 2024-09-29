@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Layout from '.././components/Layout/layout';
 import Footer from '../components/Footer';
 import Card from '.././components/Card';
@@ -8,13 +8,23 @@ import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
 
 const Landing = () => {
+
+  const ProjectsRef = useRef(null);
+  const scrollToProjects = () => {
+    ProjectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const redirect = () => {
+    window.open('https://cal.com/siddharth-meena/15min', '_blank')
+  }
+
   return (
     <>
       <div className="w-full bg-white   relative flex mx-auto animate-in">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className=" z-20 mx-auto">
           <div className="bg-grid-black/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
-            <Navbar />
+            <Navbar redirect={redirect} proj={scrollToProjects} />
             <div className="sm:pt-[6.9rem] xss:pt-[15vh] text-center">
               <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[11.2vw] leading-[1.15]">
                 Get Your Website
@@ -28,10 +38,10 @@ const Landing = () => {
                 Increase conversions and boost your online presence.
               </h3>
               <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
-                <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+                <button onClick={() => redirect()} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
                   Inquire Now
                 </button>
-                <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
+                <button onClick={scrollToProjects} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
                   View Projects
                 </button>
               </div>
@@ -64,7 +74,7 @@ const Landing = () => {
           </div>
 
           {/* To Do = Fix stutter */}
-          <Projects /> 
+          <Projects reff={ProjectsRef} /> 
           {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
             {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
           {/* </div> */}
@@ -120,7 +130,7 @@ const Landing = () => {
                   customers. Our journey began with a simple mission, to deliver
                   high quality development at affordable prices.
                 </p>
-                <button className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
+                <button onClick={() => redirect()} className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
                   Let's Chat
                 </button>
               </div>
@@ -163,14 +173,14 @@ const Landing = () => {
               </h2>
             </div>
             <div className='flex mt-8 w-full justify-center'>
-              <button className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+              <button onClick={() => redirect()} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
               Schedule a Meeting
               </button>
             </div>
           </div>
           <div className='mb-32'>
             <h2 className='font-serif text-5xl text-center mb-10'>Questions? Answers.</h2>
-            <QuestionsCards />
+            <QuestionsCards redirect={redirect} />
           </div>
           <Footer />
         </main>

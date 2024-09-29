@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 
-const Projects = () => {
+const Projects = ({ reff }) => {
   const [isHovered, setIsHovered] = useState(false);
   const tickerRef = useRef(null);
   const [tickerWidth, setTickerWidth] = useState(0);
@@ -61,6 +61,7 @@ const Projects = () => {
       className="w-[100vw] overflow-hidden "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      ref={reff}
     >
       <div
         ref={tickerRef}
