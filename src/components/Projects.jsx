@@ -1,51 +1,8 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
-const Projects = ({ reff }) => {
+const Projects = ({ ref }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const tickerRef = useRef(null);
-  const [tickerWidth, setTickerWidth] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const ticker = tickerRef.current;
-
-    const updateTickerWidth = () => {
-      if (ticker) {
-        setTickerWidth(ticker.scrollWidth / 2); // Half the scroll width since items are doubled
-      }
-    };
-
-    updateTickerWidth();
-    window.addEventListener('resize', updateTickerWidth);
-
-    let animationId;
-    let lastTimestamp = 0;
-    const baseSpeed = 0.1; // Base speed for non-hover state
-
-    const animate = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const deltaTime = timestamp - lastTimestamp;
-      lastTimestamp = timestamp;
-
-      const speed = isHovered ? baseSpeed / 2 : baseSpeed; // Slow down on hover
-      const distance = deltaTime * speed;
-      setScrollPosition((prev) => (prev + distance) % tickerWidth); // Loop back when reaching the end
-
-      if (ticker) {
-        ticker.style.transform = `translateX(-${scrollPosition}px)`;
-      }
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', updateTickerWidth);
-    };
-  }, [isHovered, tickerWidth, scrollPosition]);
 
   const items = [
     { image: 'temp_image.avif', description: 'Beautiful landscape' },
@@ -58,18 +15,15 @@ const Projects = ({ reff }) => {
 
   return (
     <div
-      className="w-[100vw] overflow-hidden "
+      className="w-[100vw] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      ref={reff}
+      ref={ref}
     >
       <div
-        ref={tickerRef}
-        className="flex gap-4"
-        style={{
-          display: 'flex',
-          willChange: 'transform', // Hint for smoother animation
-        }}
+        className={`flex gap-4 whitespace-nowrap ticker ${
+          isHovered ? 'hovered' : ''
+        }`}
       >
         {[...items, ...items].map((item, index) => (
           <div key={index} className="flex-shrink-0">
@@ -84,6 +38,26 @@ const Projects = ({ reff }) => {
           </div>
         ))}
       </div>
+
+      <style jsx>{`
+        .ticker {
+          animation: scroll 30s linear infinite;
+        }
+
+        .hovered {
+          animation-play-state: paused; /* Pausing the animation */
+          transition: transform 0.5s ease-in-out; /* Smooth slowdown */
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   );
 };

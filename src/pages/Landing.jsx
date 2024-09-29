@@ -8,15 +8,14 @@ import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
 
 const Landing = () => {
-
   const ProjectsRef = useRef(null);
   const scrollToProjects = () => {
-    ProjectsRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
+    ProjectsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const redirect = () => {
-    window.open('https://cal.com/siddharth-meena/15min', '_blank')
-  }
+    window.open('https://cal.com/siddharth-meena/15min', '_blank');
+  };
 
   return (
     <>
@@ -34,14 +33,20 @@ const Landing = () => {
                 </span>
               </h1>
               <h3 className="font-pop md:max-w-[31rem] sm:max-w-[25rem] xs:max-w-[25rem] xss:max-w-[80%] mx-auto lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] xs:text-[0.75rem] xss:text-[0.75rem] font-medium tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
-                We create beautiful, fast websites that are designed to
-                Increase conversions and boost your online presence.
+                We create beautiful, fast websites that are designed to Increase
+                conversions and boost your online presence.
               </h3>
               <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
-                <button onClick={() => redirect()} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
+                <button
+                  onClick={() => redirect()}
+                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
+                >
                   Inquire Now
                 </button>
-                <button onClick={scrollToProjects} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]">
+                <button
+                  onClick={scrollToProjects}
+                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]"
+                >
                   View Projects
                 </button>
               </div>
@@ -74,9 +79,9 @@ const Landing = () => {
           </div>
 
           {/* To Do = Fix stutter */}
-          <Projects reff={ProjectsRef} /> 
+          <Projects ref={ProjectsRef} />
           {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
-            {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
+          {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
           {/* </div> */}
           <div className=" pb-14 border-b border-black/30 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92vw] mx-auto max-w-[1920px]">
             <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
@@ -130,56 +135,134 @@ const Landing = () => {
                   customers. Our journey began with a simple mission, to deliver
                   high quality development at affordable prices.
                 </p>
-                <button onClick={() => redirect()} className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
+                <button
+                  onClick={() => redirect()}
+                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full"
+                >
                   Let's Chat
                 </button>
               </div>
             </div>
-          </div> 
-          <div className='pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
-            <h2 className='font-serif text-5xl text-center'>Problems Being Faced</h2>
-            <div className='flex flex-wrap justify-center mt-14'>
+          </div>
+          <div className="pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto">
+            <h2 className="font-serif text-5xl text-center">
+              Problems Being Faced
+            </h2>
+            <div className="flex flex-wrap justify-center mt-14">
               {[
-                {imageUrl: "icon-park_attention.png", rgb: true, title: "Outdated Designs", description: "Outdated websites fail to capture users attention, and engage them, often appearing less credible and less appealing."},
-                {imageUrl: "fxemoji_moneybag.png", rgb: true, title: "Costly Developers", description: "With an average developer salary of $110,585 in USA, costs can be high. We provide the same quality work for a fraction of the price."},
-                {imageUrl: "time.png", rgb: true, title: "Slow Development", description: "Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results."}
+                {
+                  imageUrl: 'icon-park_attention.png',
+                  rgb: true,
+                  title: 'Outdated Designs',
+                  description:
+                    'Outdated websites fail to capture users attention, and engage them, often appearing less credible and less appealing.',
+                },
+                {
+                  imageUrl: 'fxemoji_moneybag.png',
+                  rgb: true,
+                  title: 'Costly Developers',
+                  description:
+                    'With an average developer salary of $110,585 in USA, costs can be high. We provide the same quality work for a fraction of the price.',
+                },
+                {
+                  imageUrl: 'time.png',
+                  rgb: true,
+                  title: 'Slow Development',
+                  description:
+                    'Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results.',
+                },
               ].map((card, index, array) => (
-                <div key={index} className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${array.length > 1 ? 'px-4' : ''}`}>
-                  <Card imageUrl={card.imageUrl} title={card.title} rgb={card.rgb} description={card.description} />
+                <div
+                  key={index}
+                  className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${
+                    array.length > 1 ? 'px-4' : ''
+                  }`}
+                >
+                  <Card
+                    imageUrl={card.imageUrl}
+                    title={card.title}
+                    rgb={card.rgb}
+                    description={card.description}
+                  />
                 </div>
               ))}
             </div>
           </div>
-          <div className='pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto'>
-            <h2 className='font-serif text-5xl text-center text-[#00982a]'>Our Approach</h2>
-            <div className='flex flex-wrap justify-center mt-14'>
+          <div className="pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto">
+            <h2 className="font-serif text-5xl text-center text-[#00982a]">
+              Our Approach
+            </h2>
+            <div className="flex flex-wrap justify-center mt-14">
               {[
-                {imageUrl: "responsive.png", rgb: false, title: "Fully Responsive", description: "Your website will work on all mobile, tablets, and desktop screen sizes, so your clients can access your website from anywhere."},
-                {imageUrl: "conver.png", rgb: false, title: "Conversion Focused", description: "We craft an experience that engages and converts, turning visitors into loyal customers, by focusing on what drives them to action."},
-                {imageUrl: "moni.png", rgb: false, title: "Affordable", description: "Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results."}
+                {
+                  imageUrl: 'responsive.png',
+                  rgb: false,
+                  title: 'Fully Responsive',
+                  description:
+                    'Your website will work on all mobile, tablets, and desktop screen sizes, so your clients can access your website from anywhere.',
+                },
+                {
+                  imageUrl: 'conver.png',
+                  rgb: false,
+                  title: 'Conversion Focused',
+                  description:
+                    'We craft an experience that engages and converts, turning visitors into loyal customers, by focusing on what drives them to action.',
+                },
+                {
+                  imageUrl: 'moni.png',
+                  rgb: false,
+                  title: 'Affordable',
+                  description:
+                    'Delays can impact your financial goals. Our team of developers worldwide speeds up the process, ensuring faster results.',
+                },
               ].map((card, index, array) => (
-                <div key={index} className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${array.length > 1 ? 'px-4' : ''}`}>
-                  <Card imageUrl={card.imageUrl} title={card.title} rgb={card.rgb} description={card.description} />
+                <div
+                  key={index}
+                  className={`w-full sm:w-1/2 lg:w-1/3 mb-8 ${
+                    array.length > 1 ? 'px-4' : ''
+                  }`}
+                >
+                  <Card
+                    imageUrl={card.imageUrl}
+                    title={card.title}
+                    rgb={card.rgb}
+                    description={card.description}
+                  />
                 </div>
               ))}
             </div>
           </div>
-          <div className='mb-24 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full'>
+          <div className="mb-24 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full">
             <div className="relative w-full">
-              <h2 className='relative z-10  text-center text-[1.8rem] xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6'>
-                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">Your website is your <span className='text-[#007D98]'>24/7 salesman<span className='xss:opacity-100 sm:opacity-0'>.</span></span></span>
-                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">Don't just settle for an ordinary one.</span>
-                <span className="bg-white sm:px-2 px-1 sm:inline-block">Go <span className='text-[#00982A]'>beyond</span> with Masked</span>
+              <h2 className="relative z-10  text-center text-[1.8rem] xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6">
+                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+                  Your website is your{' '}
+                  <span className="text-[#007D98]">
+                    24/7 salesman
+                    <span className="xss:opacity-100 sm:opacity-0">.</span>
+                  </span>
+                </span>
+                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+                  Don't just settle for an ordinary one.
+                </span>
+                <span className="bg-white sm:px-2 px-1 sm:inline-block">
+                  Go <span className="text-[#00982A]">beyond</span> with Masked
+                </span>
               </h2>
             </div>
-            <div className='flex mt-8 w-full justify-center'>
-              <button onClick={() => redirect()} className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full">
-              Schedule a Meeting
+            <div className="flex mt-8 w-full justify-center">
+              <button
+                onClick={() => redirect()}
+                className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
+              >
+                Schedule a Meeting
               </button>
             </div>
           </div>
-          <div className='mb-32'>
-            <h2 className='font-serif text-5xl text-center mb-10'>Questions? Answers.</h2>
+          <div className="mb-32">
+            <h2 className="font-serif text-5xl text-center mb-10">
+              Questions? Answers.
+            </h2>
             <QuestionsCards redirect={redirect} />
           </div>
           <Footer />

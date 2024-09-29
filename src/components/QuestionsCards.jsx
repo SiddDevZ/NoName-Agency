@@ -4,7 +4,8 @@ import React, {
   useEffect,
   useLayoutEffect,
   useCallback,
-} from "react";
+  useMemo,
+} from 'react';
 
 const QuestionCard = React.memo(
   ({
@@ -14,31 +15,31 @@ const QuestionCard = React.memo(
     setHoveredIndex,
     isOpen,
     toggleQuestion,
-    setClosedHeight,
-    updateOpenHeight,
+    updateHeight,
   }) => {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
 
     useLayoutEffect(() => {
       if (cardRef.current) {
-        const cardHeight = cardRef.current.offsetHeight;
-        setClosedHeight(index, cardHeight);
+        updateHeight(index, cardRef.current.offsetHeight, false);
       }
-    }, [setClosedHeight, index]);
+    }, [updateHeight, index]);
 
     useEffect(() => {
       if (contentRef.current) {
+        contentRef.current.style.maxHeight = isOpen
+          ? `${contentRef.current.scrollHeight}px`
+          : '0px';
         if (isOpen) {
-          contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
-          setTimeout(() => {
-            updateOpenHeight(index, cardRef.current.offsetHeight);
-          }, 300); // Wait for transition to complete
-        } else {
-          contentRef.current.style.maxHeight = "0px";
+          const timer = setTimeout(
+            () => updateHeight(index, cardRef.current.offsetHeight, true),
+            300
+          );
+          return () => clearTimeout(timer);
         }
       }
-    }, [isOpen, index, updateOpenHeight]);
+    }, [isOpen, index, updateHeight]);
 
     return (
       <div
@@ -54,7 +55,7 @@ const QuestionCard = React.memo(
           <button className="rounded-full border border-black leading-none w-7 h-7 text-[25px] transition-transform duration-300">
             <div
               className="transition-transform duration-300"
-              style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+              style={{ transform: `rotate(${isOpen ? 45 : 0}deg)` }}
             >
               +
             </div>
@@ -63,7 +64,7 @@ const QuestionCard = React.memo(
         <div
           ref={contentRef}
           className="overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: isOpen ? "1000px" : "0px" }}
+          style={{ maxHeight: isOpen ? '1000px' : '0px' }}
         >
           <p className="text-[18px] text-[#686868] mt-3">{answer}</p>
         </div>
@@ -76,56 +77,53 @@ const AdoptionQuestions = ({ redirect }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverStyle, setHoverStyle] = useState({});
   const [openQuestions, setOpenQuestions] = useState({});
-  const [closedHeights, setClosedHeights] = useState({});
-  const [openHeights, setOpenHeights] = useState({});
+  const [heights, setHeights] = useState({});
   const containerRef = useRef(null);
 
-  const questions = [
-    "Are you adopted? Find out.",
-    "What are the requirements for adoption?",
-    "How long does the adoption process take?",
-    "What are the costs associated with adoption?",
-    "How can I prepare for adopting a child?",
-  ];
-  const answers = [
-    "There are several ways to find out if you're adopted, including asking your parents, checking birth records, or taking a DNA test.",
-    "Requirements typically include a home study, background checks, financial stability, and completion of adoption education classes.",
-    "The adoption process can take anywhere from several months to several years, depending on various factors and the type of adoption.",
-    "Adoption costs can range from $0 to $50,000 or more, depending on the type of adoption and associated fees.",
-    "Preparing for adoption involves education, emotional readiness, creating a support network, and preparing your home and lifestyle for a child.",
-  ];
+  const questions = useMemo(
+    () => [
+      'Are you adopted? Find out.',
+      'What are the requirements for adoption?',
+      'How long does the adoption process take?',
+      'What are the costs associated with adoption?',
+      'How can I prepare for adopting a child?',
+    ],
+    []
+  );
 
-  const handleSetClosedHeight = useCallback((index, height) => {
-    setClosedHeights((prevHeights) => ({
-      ...prevHeights,
-      [index]: height,
-    }));
-  }, []);
+  const answers = useMemo(
+    () => [
+      "There are several ways to find out if you're adopted, including asking your parents, checking birth records, or taking a DNA test.",
+      'Requirements typically include a home study, background checks, financial stability, and completion of adoption education classes.',
+      'The adoption process can take anywhere from several months to several years, depending on various factors and the type of adoption.',
+      'Adoption costs can range from $0 to $50,000 or more, depending on the type of adoption and associated fees.',
+      'Preparing for adoption involves education, emotional readiness, creating a support network, and preparing your home and lifestyle for a child.',
+    ],
+    []
+  );
 
-  const updateOpenHeight = useCallback((index, height) => {
-    setOpenHeights((prevHeights) => ({
-      ...prevHeights,
-      [index]: height,
+  const updateHeight = useCallback((index, height, isOpen) => {
+    setHeights((prev) => ({
+      ...prev,
+      [index]: { ...prev[index], [isOpen ? 'open' : 'closed']: height },
     }));
   }, []);
 
   const toggleQuestion = useCallback((index) => {
-    setOpenQuestions((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setOpenQuestions((prev) => ({ ...prev, [index]: !prev[index] }));
   }, []);
 
   const updateHoverStyle = useCallback(() => {
     if (hoveredIndex !== null && containerRef.current) {
-      const cards = containerRef.current.querySelectorAll("[data-index]");
-      const card = cards[hoveredIndex];
+      const card = containerRef.current.querySelector(
+        `[data-index="${hoveredIndex}"]`
+      );
       if (card) {
         const { offsetTop } = card;
         const isOpen = openQuestions[hoveredIndex];
         const height = isOpen
-          ? openHeights[hoveredIndex]
-          : closedHeights[hoveredIndex];
+          ? heights[hoveredIndex]?.open
+          : heights[hoveredIndex]?.closed;
         setHoverStyle({
           top: `${offsetTop}px`,
           height: `${height || card.offsetHeight}px`,
@@ -135,11 +133,11 @@ const AdoptionQuestions = ({ redirect }) => {
     } else {
       setHoverStyle({ opacity: 0 });
     }
-  }, [hoveredIndex, openQuestions, closedHeights, openHeights]);
+  }, [hoveredIndex, openQuestions, heights]);
 
   useEffect(() => {
     updateHoverStyle();
-  }, [updateHoverStyle, openQuestions, openHeights]);
+  }, [updateHoverStyle, openQuestions, heights]);
 
   return (
     <div className="md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] relative mx-auto bg-white font-[poppins] flex">
@@ -159,8 +157,7 @@ const AdoptionQuestions = ({ redirect }) => {
                 setHoveredIndex={setHoveredIndex}
                 isOpen={!!openQuestions[index]}
                 toggleQuestion={toggleQuestion}
-                setClosedHeight={handleSetClosedHeight}
-                updateOpenHeight={updateOpenHeight}
+                updateHeight={updateHeight}
               />
             ))}
           </div>
@@ -172,7 +169,10 @@ const AdoptionQuestions = ({ redirect }) => {
             Book a FREE Call
           </h2>
           <div className="flex justify-center mt-5">
-            <button onClick={() => redirect()} className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full">
+            <button
+              onClick={redirect}
+              className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full"
+            >
               Book a Call
             </button>
           </div>
@@ -182,4 +182,4 @@ const AdoptionQuestions = ({ redirect }) => {
   );
 };
 
-export default AdoptionQuestions;
+export default React.memo(AdoptionQuestions);
