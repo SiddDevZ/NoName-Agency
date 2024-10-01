@@ -6,6 +6,7 @@ import Navbar from '.././components/Navbar';
 import QuestionsCards from '.././components/QuestionsCards';
 import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
+import TextScramble from '../components/TextScramble';
 
 const Landing = () => {
   const ProjectsRef = useRef(null);
@@ -26,10 +27,13 @@ const Landing = () => {
             <Navbar redirect={redirect} proj={scrollToProjects} />
             <div className="sm:pt-[6.9rem] xss:pt-[15vh] text-center">
               <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[11.2vw] leading-[1.15]">
-                Get Your Website
+                <TextScramble phrases={['Get Your Website']} />
                 <span className="block mt-0">
-                  Built by{' '}
-                  <span className="text-[#00982a] relative">Experts</span>
+                  <TextScramble phrases={['Built by ']} />
+                  {/* Built by{' '} */}
+                  <span className="text-[#00982a] relative">
+                    <TextScramble phrases={['Experts']} />
+                  </span>
                 </span>
               </h1>
               <h3 className="font-pop md:max-w-[31rem] sm:max-w-[25rem] xs:max-w-[25rem] xss:max-w-[80%] mx-auto lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] xs:text-[0.75rem] xss:text-[0.75rem] font-medium tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
@@ -39,7 +43,7 @@ const Landing = () => {
               <div className="space-x-2 xs:space-x-3 sm:space-x-4 md:mt-6 sm:mt-5 xss:mt-3">
                 <button
                   onClick={() => redirect()}
-                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
+                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.35rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
                 >
                   Inquire Now
                 </button>
@@ -79,7 +83,7 @@ const Landing = () => {
           </div>
 
           {/* To Do = Fix stutter */}
-          <Projects ref={ProjectsRef} />
+          <Projects reff={ProjectsRef} />
           {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
           {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
           {/* </div> */}
@@ -121,7 +125,7 @@ const Landing = () => {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-sm font-medium text-black">
+                    <p className="text-sm font-medium unselectable text-black">
                       loved by founders worldwide
                     </p>
                   </div>
@@ -137,7 +141,7 @@ const Landing = () => {
                 </p>
                 <button
                   onClick={() => redirect()}
-                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full"
+                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full sm:w-auto xss:w-[calc(100%)] xss:mx-auto sm:mx-0 xss:block"
                 >
                   Let's Chat
                 </button>
@@ -256,6 +260,7 @@ const Landing = () => {
                 className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
               >
                 Schedule a Meeting
+                <i class="ri-arrow-right-line"></i>    
               </button>
             </div>
           </div>

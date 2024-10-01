@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-const Projects = ({ ref }) => {
+const Projects = ({ reff }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const items = [
@@ -18,7 +18,7 @@ const Projects = ({ ref }) => {
       className="w-[100vw] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      ref={ref}
+      ref={reff}
     >
       <div
         className={`flex gap-4 whitespace-nowrap ticker ${

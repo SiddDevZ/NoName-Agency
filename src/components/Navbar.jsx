@@ -13,9 +13,9 @@ const Navbar = ({ redirect, proj }) => {
       </span>
 
       <div className="text-lg flex lg:gap-12 gap-8 sm:flex xss:hidden">
-        <a href="/" className="hover:text-green-400 transition-colors duration-200 cursor-pointer">Home</a>
-        <a onClick={() => proj()} className="hover:text-green-400 transition-colors duration-200 cursor-pointer">Projects</a>
-        <a href="/blog" className="hover:text-green-400 transition-colors duration-200 cursor-pointer">Blog</a>
+        <a href="/" className="hover:text-[#00982a] transition-colors duration-200 cursor-pointer">Home</a>
+        <a onClick={() => proj()} className="hover:text-[#00982a] transition-colors duration-200 cursor-pointer">Projects</a>
+        <a href="/blog" className="hover:text-[#00982a] transition-colors duration-200 cursor-pointer">Blog</a>
       </div>
 
       <button onClick={() => redirect()} className="rounded-full py-2 px-8 text-[#00982a] hover:text-white hover:bg-green-500 transition-all duration-300 text-lg bg-[rgb(0,187,52,0.12)] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 xs:text-base xs:px-6 xss:text-sm xss:px-5">
