@@ -44,17 +44,17 @@ const QuestionCard = React.memo(
     return (
       <div
         ref={cardRef}
-        className="relative flex flex-col items-start p-3 border-b border-black w-full cursor-pointer"
+        className="relative flex flex-col items-start p-3 border-b border-black dark:border-white/20 w-full cursor-pointer"
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
         onClick={() => toggleQuestion(index)}
         data-index={index}
       >
         <div className="w-full flex items-center justify-between">
-          <p className="text-[26px] unselectable">{question}</p>
-          <button className="rounded-full border border-black leading-none w-7 h-7 text-[25px] transition-transform duration-300">
+          <p className="text-[26px] unselectable dark:text-white">{question}</p>
+          <button className="rounded-full border border-black dark:border-white leading-none w-7 h-7 text-[25px] transition-transform duration-300">
             <div
-              className="transition-transform duration-300"
+              className="transition-transform duration-300 dark:text-white"
               style={{ transform: `rotate(${isOpen ? 45 : 0}deg)` }}
             >
               +
@@ -66,7 +66,7 @@ const QuestionCard = React.memo(
           className="overflow-hidden transition-all duration-300 ease-in-out"
           style={{ maxHeight: isOpen ? '1000px' : '0px' }}
         >
-          <p className="text-[18px] text-[#686868] mt-3">{answer}</p>
+          <p className="text-[18px] text-[#686868] dark:text-[#A0A0A0] mt-3">{answer}</p>
         </div>
       </div>
     );
@@ -140,12 +140,12 @@ const AdoptionQuestions = ({ redirect }) => {
   }, [updateHoverStyle, openQuestions, heights]);
 
   return (
-    <div className="md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] relative mx-auto bg-white font-[poppins] flex">
+    <div className="md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] relative mx-auto bg-white dark:bg-[#131313] font-[poppins] flex">
       <div className="flex w-full mx-auto justify-between gap-24">
         <div className="flex-1 relative">
           <div ref={containerRef} className="w-full">
             <div
-              className="absolute left-0 w-full bg-black/5 transition-all duration-300 ease-in-out"
+              className="absolute left-0 w-full bg-black/5 dark:bg-white/5 transition-all duration-300 ease-in-out"
               style={hoverStyle}
             />
             {questions.map((question, index) => (
@@ -162,16 +162,16 @@ const AdoptionQuestions = ({ redirect }) => {
             ))}
           </div>
         </div>
-        <div className="hidden lg:flex bg-[#F1F1F1] w-1/4 aspect-square rounded-xl flex-col align-middle justify-center mx-auto">
+        <div className="hidden lg:flex bg-[#F1F1F1] dark:bg-[#1F1F1F] w-1/4 aspect-square rounded-xl flex-col align-middle justify-center mx-auto">
           <h2 className="text-center text-[5.25rem] leading-7 mb-11">🤔</h2>
-          <h2 className="text-center font-bold font-inter text-2xl">
+          <h2 className="text-center font-bold font-inter text-2xl dark:text-white">
             Have more Questions? <br />
             Book a FREE Call
           </h2>
           <div className="flex justify-center mt-5">
             <button
               onClick={redirect}
-              className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full"
+              className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full dark:bg-[#1A9F30] dark:border-[#1A9F30] dark:hover:bg-[#23B33A] dark:hover:border-[#23B33A]"
             >
               Book a Call
             </button>

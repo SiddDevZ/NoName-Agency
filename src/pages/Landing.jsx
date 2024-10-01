@@ -7,6 +7,7 @@ import QuestionsCards from '.././components/QuestionsCards';
 import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
 import TextScramble from '../components/TextScramble';
+import 'remixicon/fonts/remixicon.css'
 
 const Landing = () => {
   const ProjectsRef = useRef(null);
@@ -20,13 +21,13 @@ const Landing = () => {
 
   return (
     <>
-      <div className="w-full bg-white   relative flex mx-auto animate-in">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
+      <div className="w-full bg-white dark:bg-[#131313]  relative flex mx-auto animate-in">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white dark:bg-[#131313] [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className=" z-20 mx-auto">
-          <div className="bg-grid-black/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
+          <div className="bg-grid-black/[0.04] dark:bg-grid-white/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
             <Navbar redirect={redirect} proj={scrollToProjects} />
             <div className="sm:pt-[6.9rem] xss:pt-[15vh] text-center">
-              <h1 className="font-serif lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[11.2vw] leading-[1.15]">
+              <h1 className="font-serif dark:text-white lg:text-[5.3rem] md:text-[5rem] sm:text-[10vw] xs:text-[10.3vw] xss:text-[11.2vw] leading-[1.15]">
                 <TextScramble phrases={['Get Your Website']} />
                 <span className="block mt-0">
                   <TextScramble phrases={['Built by ']} />
@@ -36,7 +37,7 @@ const Landing = () => {
                   </span>
                 </span>
               </h1>
-              <h3 className="font-pop md:max-w-[31rem] sm:max-w-[25rem] xs:max-w-[25rem] xss:max-w-[80%] mx-auto lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] xs:text-[0.75rem] xss:text-[0.75rem] font-medium tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838]">
+              <h3 className="font-pop md:max-w-[31rem] sm:max-w-[25rem] xs:max-w-[25rem] xss:max-w-[80%] mx-auto lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] xs:text-[0.75rem] xss:text-[0.75rem] font-medium tracking-[0.05em] lg:mt-[1.1rem] md:mt-[0.95vh] sm:mt-[1.5vh] xss:mt-[1.35vh] text-center text-[#383838] dark:text-[#c1c1c1]">
                 We create beautiful, fast websites that are designed to Increase
                 conversions and boost your online presence.
               </h3>
@@ -49,34 +50,34 @@ const Landing = () => {
                 </button>
                 <button
                   onClick={scrollToProjects}
-                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black text-black text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]"
+                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black dark:border-white text-black dark:text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black  hover:bg-opacity-[0.03]"
                 >
                   View Projects
                 </button>
               </div>
-              <h5 className="sm:mt-3 xss:mt-1.5 sm:text-sm xss:text-xs leading-5 opacity-50 italic">
+              <h5 className="sm:mt-3 xss:mt-1.5 sm:text-sm xss:text-xs dark:text-white leading-5 opacity-50 italic">
                 No Signup needed, No subscription required.
               </h5>
               <div className="flex justify-center items-center sm:mt-8 xss:mt-5 space-x-8 opacity-90 sm:space-x-4 xs:space-x-3 xss:space-x-2.5">
                 <img
                   src="google.png"
                   alt="Google Logo"
-                  className="h-12 w-auto sm:h-10 xs:h-[8vw] xss:h-[8vw]"
+                  className="h-12 w-auto sm:h-10 xs:h-[8vw] xss:h-[8vw] dark:invert"
                 />
                 <img
                   src="buzz.png"
                   alt="Buzz Logo"
-                  className="h-24 w-auto sm:h-20 xs:h-[16vw] xss:h-[14vw]"
+                  className="h-24 w-auto sm:h-20 xs:h-[16vw] xss:h-[14vw] dark:invert"
                 />
                 <img
                   src="mit.png"
                   alt="MIT Logo"
-                  className="h-8 w-auto sm:h-7 xs:h-[5vw] xss:h-[4.6vw]"
+                  className="h-8 w-auto sm:h-7 xs:h-[5vw] xss:h-[4.6vw] dark:invert"
                 />
                 <img
                   src="forbes.png"
                   alt="Forbes Logo"
-                  className="h-10 w-auto sm:h-8 xs:h-[6vw] xss:h-[6vw]"
+                  className="h-10 w-auto sm:h-8 xs:h-[6vw] xss:h-[6vw] dark:invert"
                 />
               </div>
             </div>
@@ -87,13 +88,13 @@ const Landing = () => {
           {/* <div className='flex md:w-[80vw] mx-auto max-w-[1920px] sm:w-[90vw] xss:w-[95vw] justify-center'> */}
           {/* <div className="h-[1px] mt-10 w-[90vw] bg-black opacity-25"></div> */}
           {/* </div> */}
-          <div className=" pb-14 border-b border-black/30 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92vw] mx-auto max-w-[1920px]">
-            <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black font-pop text-lg w-auto inline-block">
+          <div className="pb-14 border-b border-black/30 dark:border-white/30 mt-14 md:w-[85vw] sm:w-[90vw] xss:w-[92vw] mx-auto max-w-[1920px]">
+            <h2 className="border-[1.5px] px-4 font-normal py-1.5 rounded-3xl border-black dark:border-white font-pop text-lg w-auto inline-block dark:text-white">
               About Us
             </h2>
             <div className="mt-4 md:flex justify-between w-full">
               <div className="w-[50%] md:mb-[0rem] xss:mb-[1rem]">
-                <h2 className="font-serif lg:text-[3.1vw] md:text-[2rem] xss:text-[1.9rem] sm:text-[2rem] min-w-[490px] leading-[1.15]">
+                <h2 className="font-serif lg:text-[3.1vw] md:text-[2rem] xss:text-[1.9rem] sm:text-[2rem] min-w-[490px] leading-[1.15] dark:text-white">
                   Creating Websites That <br /> Increase Your Sales
                 </h2>
                 <div className="flex items-center space-x-4 md:mt-6 xss:mt-4 w-[490px]">
@@ -126,7 +127,7 @@ const Landing = () => {
                       />
                     </div>
                   </div>
-                  <div className="h-9 w-[1.15px] bg-black opacity-50"></div>
+                  <div className="h-9 w-[1.15px] bg-black dark:bg-white opacity-50"></div>
                   <div>
                     <div className="flex text-[#ffac33]">
                       {[1, 2, 3, 4, 5].map((star) => (
@@ -140,14 +141,14 @@ const Landing = () => {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-sm font-medium unselectable text-black">
+                    <p className="text-sm font-medium unselectable text-black dark:text-white">
                       loved by founders worldwide
                     </p>
                   </div>
                 </div>
               </div>
               <div className="lg:w-[50%] md:w-[45%]">
-                <p className="font-pop lg:text-[1.04rem] md:text-[0.9rem] xss:text-[0.85rem] tracking-[-0.002em] lg:leading-[1.45rem] md:leading-[1.3rem] xss:leading-[1.25rem]">
+                <p className="font-pop lg:text-[1.04rem] md:text-[0.9rem] xss:text-[0.85rem] tracking-[-0.002em] lg:leading-[1.45rem] md:leading-[1.3rem] xss:leading-[1.25rem] dark:text-gray-300">
                   We specialize in designing and developing stunning websites
                   that are optimized to drive conversions. By blending
                   creativity with strategic design, we turn visitors into loyal
@@ -156,7 +157,7 @@ const Landing = () => {
                 </p>
                 <button
                   onClick={() => redirect()}
-                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full sm:w-auto xss:w-[calc(100%)] xss:mx-auto sm:mx-0 xss:block"
+                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full sm:w-auto xss:w-[calc(100%)] xss:mx-auto sm:mx-0 xss:block dark:bg-[#1ab33e] dark:border-[#1ab33e] dark:hover:bg-[#1e802e] dark:hover:border-[#1e802e]"
                 >
                   Let's Chat
                 </button>
@@ -164,7 +165,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="pt-10 md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto">
-            <h2 className="font-serif text-5xl text-center">
+            <h2 className="font-serif text-5xl dark:text-white text-center">
               Problems Being Faced
             </h2>
             <div className="flex flex-wrap justify-center mt-14">
@@ -251,21 +252,21 @@ const Landing = () => {
               ))}
             </div>
           </div>
-          <div className="mb-24 pt-14 bg-dot-[#D6D5D5] pb-16 border rounded-2xl border-black md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full">
+          <div className="mb-24 pt-14 bg-dot-[#D6D5D5] dark:bg-dot-[#333333] pb-16 border rounded-2xl border-black dark:border-white md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full">
             <div className="relative w-full">
-              <h2 className="relative z-10  text-center text-[1.8rem] xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6">
-                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+              <h2 className="relative z-10 text-center text-[1.8rem] dark:text-white xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6">
+                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
                   Your website is your{' '}
-                  <span className="text-[#007D98]">
+                  <span className="text-[#007D98] dark:text-[#299fba]">
                     24/7 salesman
                     <span className="xss:opacity-100 sm:opacity-0">.</span>
                   </span>
                 </span>
-                <span className="bg-white sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
                   Don't just settle for an ordinary one.
                 </span>
-                <span className="bg-white sm:px-2 px-1 sm:inline-block">
-                  Go <span className="text-[#00982A]">beyond</span> with Luvo
+                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block">
+                  Go <span className="text-[#00982A] dark:text-[#0cff51]">beyond</span> with Luvo
                 </span>
               </h2>
             </div>
@@ -280,7 +281,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="mb-32">
-            <h2 className="font-serif text-5xl text-center mb-10">
+            <h2 className="font-serif text-5xl dark:text-white text-center mb-10">
               Questions? Answers.
             </h2>
             <QuestionsCards redirect={redirect} />

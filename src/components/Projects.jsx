@@ -32,7 +32,7 @@ const Projects = ({ reff }) => {
               alt={`Ticker image ${(index % 6) + 1}`}
               className="h-[300px] md:h-[650px] w-[300px] md:w-[650px] object-cover"
             />
-            <p className="mt-1 text-sm md:text-base lg:text-base w-[300px] font-mono md:w-[650px] text-black opacity-70">
+            <p className="mt-1 text-sm md:text-base lg:text-base w-[300px] font-mono md:w-[650px] text-black dark:text-white opacity-70">
               {item.description}
             </p>
           </div>
