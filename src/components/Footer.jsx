@@ -33,12 +33,12 @@ const Footer = () => {
               Email us:
             </p>
             <a
-              href="mailto:hello@masked.com"
+              href="mailto:hello@luvoweb.com"
               target="_blank"
               rel="noopener noreferrer"
               className="2xl:text-[24px] xs:text-[18px] text-[16px] hover:underline"
             >
-              hello@masked.com
+              hello@luvoweb.com
             </a>
           </div>
           <div className="xs:gap-4 gap-1 items-center hidden xs:flex">
@@ -48,7 +48,7 @@ const Footer = () => {
               className="2xl:h-[40px] xs:h-[35px] h-[30px]"
             />
             <p className="2xl:text-[28px] sm:text-[23px] xs:text-[22px] text-[20px] xs:tracking-normal tracking-tighter font-semibold">
-              Masked
+              Luvo Web
             </p>
           </div>
           <nav className="flex xs:hidden gap-2">

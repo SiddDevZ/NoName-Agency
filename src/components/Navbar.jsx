@@ -6,10 +6,10 @@ const Navbar = ({ redirect, proj }) => {
       <span className="flex items-center space-x-3 group">
         <img
           src="./ph_shower-bold.png"
-          alt="masked logo"
+          alt="Luvo logo"
           className="w-8 h-8 transition-transform duration-300 group-hover:rotate-12 xs:w-7 xs:h-7 xss:w-6 xss:h-6"
         />
-        <h1 className="text-2xl unselectable font-bold tracking-tight xs:text-xl xss:text-lg">Masked</h1>
+        <h1 className="text-2xl unselectable font-bold tracking-tight xs:text-xl xss:text-lg">Luvo Web</h1>
       </span>
 
       <div className="text-lg flex lg:gap-12 gap-8 sm:flex xss:hidden">

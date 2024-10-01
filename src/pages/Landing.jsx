@@ -98,18 +98,33 @@ const Landing = () => {
                 </h2>
                 <div className="flex items-center space-x-4 md:mt-6 xss:mt-4 w-[490px]">
                   <div className="flex -space-x-4">
-                    {[1, 2, 3].map((index) => (
-                      <div
-                        key={index}
-                        className="w-12 h-12 rounded-full overflow-hidden"
-                      >
-                        <img
-                          src="icon-park_attention.png"
-                          alt="User avatar"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
+                    <div
+                      className="w-12 h-12 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="./eee.jpg"
+                        alt="User avatar"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div
+                      className="w-12 h-12 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="./4780253t1hd917(1).png"
+                        alt="User avatar"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div
+                      className="w-12 h-12 rounded-full overflow-hidden"
+                    >
+                      <img
+                        src="./Sille24-1(1).png"
+                        alt="User avatar"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <div className="h-9 w-[1.15px] bg-black opacity-50"></div>
                   <div>
@@ -250,7 +265,7 @@ const Landing = () => {
                   Don't just settle for an ordinary one.
                 </span>
                 <span className="bg-white sm:px-2 px-1 sm:inline-block">
-                  Go <span className="text-[#00982A]">beyond</span> with Masked
+                  Go <span className="text-[#00982A]">beyond</span> with Luvo
                 </span>
               </h2>
             </div>
@@ -260,7 +275,7 @@ const Landing = () => {
                 className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
               >
                 Schedule a Meeting
-                <i class="ri-arrow-right-line"></i>    
+                <i className="ri-arrow-right-line"></i>    
               </button>
             </div>
           </div>

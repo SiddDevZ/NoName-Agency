@@ -6,11 +6,11 @@ const Projects = ({ reff }) => {
 
   const items = [
     { image: 'temp_image.avif', description: 'Beautiful landscape' },
-    { image: 'temp_image.avif', description: 'City skyline' },
-    { image: 'temp_image.avif', description: 'Mountain view' },
+    { image: 'temp2.avif', description: 'City skyline' },
+    { image: 'temp3.avif', description: 'Mountain view' },
     { image: 'temp_image.avif', description: 'Serene beach' },
-    { image: 'temp_image.avif', description: 'Forest trail' },
-    { image: 'temp_image.avif', description: 'Desert sunset' },
+    { image: 'temp2.avif', description: 'Forest trail' },
+    { image: 'temp3.avif', description: 'Desert sunset' },
   ];
 
   return (
