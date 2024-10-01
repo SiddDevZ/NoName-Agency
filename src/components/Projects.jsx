@@ -43,6 +43,11 @@ const Projects = ({ reff }) => {
         .ticker {
           animation: scroll 30s linear infinite;
         }
+        @media only screen and (max-width: 768px) {
+          .ticker {
+           animation: scroll 20s linear infinite;
+          }
+        }  
 
         .hovered {
           animation-play-state: paused; /* Pausing the animation */
