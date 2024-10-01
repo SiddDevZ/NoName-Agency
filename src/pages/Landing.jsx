@@ -276,7 +276,7 @@ const Landing = () => {
                 className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
               >
                 Schedule a Meeting
-                <i className="ri-arrow-right-line"></i>    
+                <i className="ri-arrow-right-line ml-2 text-lg"></i>    
               </button>
             </div>
           </div>
