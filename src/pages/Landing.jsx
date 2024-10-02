@@ -21,7 +21,7 @@ const Landing = () => {
 
   return (
     <>
-      <div className="w-full bg-white dark:bg-[#131313]  relative flex mx-auto animate-in">
+      <div className="w-full bg-white dark:bg-[#131313]  relative flex mx-auto animate-in overflow-hidden">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white dark:bg-[#131313] [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <main className=" z-20 mx-auto">
           <div className="bg-grid-black/[0.04] dark:bg-grid-white/[0.04] pt-5 sm:pb-14 xss:pb-[4.5rem]">
