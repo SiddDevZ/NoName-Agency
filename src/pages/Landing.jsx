@@ -157,7 +157,7 @@ const Landing = () => {
                 </p>
                 <button
                   onClick={() => redirect()}
-                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full sm:w-auto xss:w-[calc(100%)] xss:mx-auto sm:mx-0 xss:block dark:bg-[#1ab33e] dark:border-[#1ab33e] dark:hover:bg-[#1e802e] dark:hover:border-[#1e802e]"
+                  className="sm:px-[1.42rem] xss:px-[2rem] xss:py-[0.7rem] xss:text-lg mt-5 sm:py-[0.4rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white sm:text-base font-pop font-medium rounded-full sm:w-auto xss:w-[calc(100%)] xss:mx-auto sm:mx-0 xss:block dark:bg-[#14882f] dark:border-[#14882f] dark:hover:bg-[#1e802e] dark:hover:border-[#1e802e]"
                 >
                   Let's Chat
                 </button>

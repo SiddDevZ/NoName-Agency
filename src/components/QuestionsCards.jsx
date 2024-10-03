@@ -82,22 +82,22 @@ const AdoptionQuestions = ({ redirect }) => {
 
   const questions = useMemo(
     () => [
-      'Are you adopted? Find out.',
-      'What are the requirements for adoption?',
-      'How long does the adoption process take?',
-      'What are the costs associated with adoption?',
-      'How can I prepare for adopting a child?',
+      'Why not hire a full-time designer and developer',
+      'How do we communicate during the project?',
+      "What if I'm not happy with the results?",
+      'Will I be able to get a refund?',
+      'How quickly will I receive my project?',
     ],
     []
   );
 
   const answers = useMemo(
     () => [
-      "There are several ways to find out if you're adopted, including asking your parents, checking birth records, or taking a DNA test.",
-      'Requirements typically include a home study, background checks, financial stability, and completion of adoption education classes.',
-      'The adoption process can take anywhere from several months to several years, depending on various factors and the type of adoption.',
-      'Adoption costs can range from $0 to $50,000 or more, depending on the type of adoption and associated fees.',
-      'Preparing for adoption involves education, emotional readiness, creating a support network, and preparing your home and lifestyle for a child.',
+      'Hiring full-time professionals is expensive and hard to manage. A senior designer can cost $100k+ and a developer over $300k, plus benefits and vacations totaling $500k+. We offer expert designers and developers for a fraction of that cost, without the hassle of managing them full-time.',
+      "We can communicate through WhatsApp, Discord, Slack, or any platform you prefer. We're flexible and keep you updated regularly to ensure the project meets your expectations.",
+      "This doesn't happen very often, if you're not happy, we offer unlimited revisions. We'll continue refining the project until you're 100% satisfied.",
+      'Refunds are handled on a case-by-case basis. If the project hasn’t progressed beyond the initial stages, we may offer one. Once significant work has been completed, refunds may not be possible.',
+      "Project timelines vary based on complexity, but most are completed within 2-6 weeks. We'll provide a detailed timeline after discussing your specific needs.",
     ],
     []
   );
@@ -145,7 +145,7 @@ const AdoptionQuestions = ({ redirect }) => {
         <div className="flex-1 relative">
           <div ref={containerRef} className="w-full">
             <div
-              className="absolute left-0 w-full bg-black/5 dark:bg-white/5 transition-all duration-300 ease-in-out"
+              className="absolute left-0 w-full bg-[#f5f5f5] dark:bg-white/5 transition-all duration-300 ease-in-out"
               style={hoverStyle}
             />
             {questions.map((question, index) => (

@@ -3,7 +3,9 @@ import 'remixicon/fonts/remixicon.css'
 
 const Navbar = ({ redirect, proj }) => {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('darkMode') === 'true' || false;
+  });
 
   useEffect(() => {
     if (darkMode) {
@@ -11,6 +13,7 @@ const Navbar = ({ redirect, proj }) => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
   const toggleDarkMode = () => {
@@ -35,9 +38,9 @@ const Navbar = ({ redirect, proj }) => {
       </div>
       <div className='flex align-middle gap-2'>
         <button onClick={toggleDarkMode} className='h-[2.7rem] w-[2.7rem] border border-[#1a1a1a4f] dark:border-[#e8e8e84f] transition-all hover:border-[#262626] hover:dark:border-[#dbdbdb] rounded-full'>
-          <i class="ri-sun-line text-2xl"></i>
+          <i className={`ri-${darkMode ? 'sun-line' : 'moon-line'} text-2xl`}></i>
         </button>
-        <button onClick={() => redirect()} className="rounded-full xss:hidden sm:block h-[2.7rem] px-8 text-[#00982a] dark:text-[#00ff47] hover:text-white dark:hover:text-[#00ff47] hover:bg-green-500 dark:hover:bg-[#0a5b28] transition-all duration-300 text-lg bg-[rgb(0,187,52,0.12)] dark:bg-[rgba(0,255,71,0.12)] focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 focus:ring-opacity-50 xs:text-base xs:px-6 xss:text-sm xss:px-5">
+        <button onClick={() => redirect()} className="rounded-full xss:hidden sm:block h-[2.7rem] px-8 text-[#00982a] dark:text-[#00ff47] hover:text-white dark:hover:text-[#00ff47] hover:bg-green-500 dark:hover:bg-[#0a5b28] transition-all duration-300 text-lg bg-[rgba(0,187,53,0.15)] dark:bg-[rgba(0,255,71,0.12)] focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 focus:ring-opacity-50 xs:text-base xs:px-6 xss:text-sm xss:px-5">
           Contact
         </button>
       </div>

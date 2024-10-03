@@ -9,22 +9,10 @@ const Footer = () => {
             We Don't Just Build <br />
             Websites, <span className="text-[#00982a] dark:text-[#00c037]">We Build Dreams</span>
           </h3>
-          <nav className=" lg:gap-6 md:gap-2 hidden xs:flex">
-            <img
-              src="mdi_linkedin.png"
-              alt=""
-              className="2xl:h-[50px] md:h-[50px] h-[40px] w-auto brightness-50 dark:brightness-100 dark:invert"
-            />
-            <img
-              src="mdi_github.png"
-              alt=""
-              className="2xl:h-[50px] md:h-[50px] h-[40px] w-auto dark:invert"
-            />
-            <img
-              src="ic_outline-discord.png"
-              alt=""
-              className="2xl:h-[50px] md:h-[50px] h-[40px] w-auto brightness-50 dark:brightness-100 dark:invert"
-            />
+          <nav className="lg:gap-6 md:gap-2 hidden xs:flex">
+            <i className="ri-linkedin-box-fill text-[40px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(10,102,194,0.5)] active:text-[#0A66C2] cursor-pointer"></i>
+            <i className="ri-github-fill text-[40px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] active:text-gray-600 dark:active:text-gray-400 cursor-pointer"></i>
+            <i className="ri-discord-fill text-[40px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(114,137,218,0.5)] active:text-[#7289DA] cursor-pointer"></i>
           </nav>
         </div>
         <div className="font-[poppins] w-full flex justify-between">
@@ -41,32 +29,20 @@ const Footer = () => {
               hello@luvoweb.com
             </a>
           </div>
-          <div className="xs:gap-4 gap-1 items-center hidden xs:flex">
+          <div className="xs:gap-3 gap-1 items-center hidden xs:flex">
             <img
               src="ph_shower-bold.png"
               alt=""
-              className="2xl:h-[40px] xs:h-[35px] h-[30px] dark:invert"
+              className="2xl:h-[35px] xs:h-[35px] h-[30px] dark:invert"
             />
-            <p className="2xl:text-[28px] sm:text-[23px] xs:text-[22px] text-[20px] xs:tracking-normal tracking-tighter font-semibold dark:text-white">
+            <p className="2xl:text-[22px] sm:text-[23px] xs:text-[22px] text-[20px] xs:tracking-normal tracking-tighter font-semibold dark:text-white">
               Luvo Web
             </p>
           </div>
-          <nav className="flex xs:hidden gap-2">
-            <img
-              src="mdi_linkedin.png"
-              alt=""
-              className="2xl:h-[54px] md:h-[50px] h-[33px] w-auto brightness-50 dark:brightness-100 dark:invert"
-            />
-            <img
-              src="mdi_github.png"
-              alt=""
-              className="2xl:h-[54px] md:h-[50px] h-[33px] w-auto dark:invert"
-            />
-            <img
-              src="ic_outline-discord.png"
-              alt=""
-              className="2xl:h-[54px] md:h-[50px] h-[33px] w-auto brightness-50 dark:brightness-100 dark:invert"
-            />
+          <nav className="flex xs:hidden gap-3">
+            <i className="ri-linkedin-box-fill text-[28px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(10,102,194,0.5)] active:text-[#0A66C2] cursor-pointer"></i>
+            <i className="ri-github-fill text-[28px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] active:text-gray-600 dark:active:text-gray-400 cursor-pointer"></i>
+            <i className="ri-discord-fill text-[28px] text-black dark:text-white transition-all duration-300 ease-in-out hover:scale-110 hover:filter active:drop-shadow-[0_0_5px_rgba(114,137,218,0.5)] active:text-[#7289DA] cursor-pointer"></i>
           </nav>
         </div>
       </div>
