@@ -22,14 +22,13 @@ const Navbar = ({ redirect, proj }) => {
 
   return (
     <nav className="w-full text-gray-800 dark:text-gray-200 rounded-2xl h-14 p-2 flex justify-between items-center px-8 font-['Inter'] md:w-[80vw] sm:w-[90vw] xss:w-[95vw] mx-auto sm:bg-white/10 sm:backdrop-filter sm:backdrop-blur-3xl sm:border dark:sm:bg-gray-800/10 dark:sm:border-[#676767]">
-      <span className="flex items-center space-x-3 group">
-        <img
-          src="./ph_shower-bold.png"
-          alt="Luvo logo"
-          className="w-8 h-8 transition-transform duration-300 group-hover:rotate-12 xs:w-7 xs:h-7 xss:w-6 xss:h-6 dark:invert"
-        />
-        <h1 className="text-2xl unselectable font-bold tracking-tight xs:text-xl xss:text-lg dark:text-white">Luvo Web</h1>
-      </span>
+      {/* <img src="./logo.webp" alt="Logo" className="h-[60%] w-auto object-contain" /> */}
+      <h2 className="text-2xl font-black opacity-55 ">
+        <span className="text-red-500">L</span>
+        <span className="text-blue-500">U</span>
+        <span className="text-green-500">V</span>
+        <span className="text-orange-500">O</span>
+      </h2>
 
       <div className="text-lg flex lg:gap-12 gap-8 sm:flex xss:hidden">
         <a href="/" className="hover:text-[#00982a] dark:hover:text-[#00ff47] transition-colors duration-200 cursor-pointer">Home</a>
