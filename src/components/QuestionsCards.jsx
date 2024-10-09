@@ -51,7 +51,9 @@ const QuestionCard = React.memo(
         data-index={index}
       >
         <div className="w-full flex items-center justify-between">
-          <p className="text-[26px] unselectable dark:text-white">{question}</p>
+          <p className="md:text-[26px] text-[20px] unselectable dark:text-white w-fit">
+            {question}
+          </p>
           <button className="rounded-full border border-black dark:border-white leading-none w-7 h-7 text-[25px] transition-transform duration-300">
             <div
               className="transition-transform duration-300 dark:text-white"
@@ -66,7 +68,9 @@ const QuestionCard = React.memo(
           className="overflow-hidden transition-all duration-300 ease-in-out"
           style={{ maxHeight: isOpen ? '1000px' : '0px' }}
         >
-          <p className="text-[18px] text-[#686868] dark:text-[#A0A0A0] mt-3">{answer}</p>
+          <p className="text-[18px] text-[#686868] dark:text-[#A0A0A0] mt-3">
+            {answer}
+          </p>
         </div>
       </div>
     );
@@ -79,6 +83,9 @@ const AdoptionQuestions = ({ redirect }) => {
   const [openQuestions, setOpenQuestions] = useState({});
   const [heights, setHeights] = useState({});
   const containerRef = useRef(null);
+  const lastWindowSize = useRef({
+    width: window.innerWidth,
+  });
 
   const questions = useMemo(
     () => [
@@ -134,6 +141,45 @@ const AdoptionQuestions = ({ redirect }) => {
       setHoverStyle({ opacity: 0 });
     }
   }, [hoveredIndex, openQuestions, heights]);
+
+  const recalculateHeights = useCallback(() => {
+    if (containerRef.current) {
+      const cards = containerRef.current.querySelectorAll('[data-index]');
+      cards.forEach((card, index) => {
+        const isOpen = openQuestions[index];
+        const contentElement = card.querySelector('div[style]');
+
+        // Update closed height
+        updateHeight(index, card.offsetHeight, false);
+
+        // Update open height
+        if (isOpen && contentElement) {
+          contentElement.style.maxHeight = 'none';
+          updateHeight(index, card.offsetHeight, true);
+          contentElement.style.maxHeight = `${contentElement.scrollHeight}px`;
+        }
+      });
+    }
+  }, [openQuestions, updateHeight]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      const widthDiff = Math.abs(currentWidth - lastWindowSize.current.width);
+      const heightDiff = Math.abs(
+        currentHeight - lastWindowSize.current.height
+      );
+
+      if (widthDiff >= 10) {
+        recalculateHeights();
+        lastWindowSize.current = { width: currentWidth };
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [recalculateHeights]);
 
   useEffect(() => {
     updateHoverStyle();

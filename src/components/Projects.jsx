@@ -44,13 +44,13 @@ const Projects = ({ reff }) => {
         }
         @media only screen and (max-width: 768px) {
           .ticker {
-           animation: scroll 20s linear infinite;
+            animation: scroll-small 20s linear infinite;
           }
-        }  
+        }
 
         .hovered {
-          animation-play-state: paused; /* Pausing the animation */
-          transition: transform 0.5s ease-in-out; /* Smooth slowdown */
+          animation-play-state: paused;
+          transition: transform 0.5s ease-in-out;
         }
 
         @keyframes scroll {
@@ -58,7 +58,18 @@ const Projects = ({ reff }) => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(
+              -${items.length * 666}px
+            ); /* Adjust this width */
+          }
+        }
+
+        @keyframes scroll-small {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${items.length * 316}px);
           }
         }
       `}</style>
