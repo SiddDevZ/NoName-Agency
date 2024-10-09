@@ -7,7 +7,7 @@ import QuestionsCards from '.././components/QuestionsCards';
 import Meetings from '../components/Meetings';
 import Projects from '../components/Projects';
 import TextScramble from '../components/TextScramble';
-import 'remixicon/fonts/remixicon.css'
+import 'remixicon/fonts/remixicon.css';
 
 const Landing = () => {
   const ProjectsRef = useRef(null);
@@ -50,7 +50,7 @@ const Landing = () => {
                 </button>
                 <button
                   onClick={scrollToProjects}
-                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black dark:border-white text-black dark:text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black  hover:bg-opacity-[0.03]"
+                  className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.6rem] border border-black dark:border-white text-black dark:text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop hover:scale-[1.03] font-medium rounded-full backdrop-filter backdrop-blur-sm transition-all hover:bg-black hover:bg-opacity-[0.03]"
                 >
                   View Projects
                 </button>
@@ -99,27 +99,21 @@ const Landing = () => {
                 </h2>
                 <div className="flex items-center space-x-4 md:mt-6 xss:mt-4 w-[490px]">
                   <div className="flex -space-x-4">
-                    <div
-                      className="w-12 h-12 rounded-full overflow-hidden"
-                    >
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
                       <img
                         src="./eee.jpg"
                         alt="User avatar"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div
-                      className="w-12 h-12 rounded-full overflow-hidden"
-                    >
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
                       <img
                         src="./4780253t1hd917(1).png"
                         alt="User avatar"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div
-                      className="w-12 h-12 rounded-full overflow-hidden"
-                    >
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
                       <img
                         src="./Sille24-1(1).png"
                         alt="User avatar"
@@ -254,19 +248,23 @@ const Landing = () => {
           </div>
           <div className="mb-24 pt-14 bg-dot-[#D6D5D5] dark:bg-dot-[#333333] pb-16 border rounded-2xl border-black dark:border-white md:w-[85vw] sm:w-[90vw] xss:w-[92.5vw] mx-auto w-full">
             <div className="relative w-full">
-              <h2 className="relative z-10 text-center text-[1.8rem] dark:text-white xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6">
-                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+              <h2 className="relative z-10 text-center text-[1.8rem] dark:text-white xss:text-[1.8rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xss:font-inter xss:font-bold sm:font-semibold sm:tracking-[0.032em] leading-[1.3] sm:leading-[1.12] sm:px-4 xss:px-6 ">
+                <span className=" sm:px-2 px-1 sm:inline-block backdrop-filter backdrop-blur-[2px]">
                   Your website is your{' '}
-                  <span className="text-[#007D98] dark:text-[#299fba]">
+                  <span className="text-[#007D98] dark:text-[#299fba] backdrop-filter backdrop-blur-[2px]">
                     24/7 salesman
                     <span className="xss:opacity-100 sm:opacity-0">.</span>
                   </span>
                 </span>
-                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block mb-2 sm:mb-3">
+                <span className="sm:px-2 px-1 sm:inline-block backdrop-filter backdrop-blur-[2px]">
                   Don't just settle for an ordinary one.
                 </span>
-                <span className="bg-white dark:bg-[#131313] sm:px-2 px-1 sm:inline-block">
-                  Go <span className="text-[#00982A] dark:text-[#0cff51]">beyond</span> with Luvo
+                <span className="sm:px-2 px-1 sm:inline-block backdrop-filter backdrop-blur-[2px]">
+                  Go{' '}
+                  <span className="text-[#00982A] dark:text-[#0cff51]">
+                    beyond
+                  </span>{' '}
+                  with Luvo
                 </span>
               </h2>
             </div>
@@ -276,7 +274,7 @@ const Landing = () => {
                 className="px-[4.5vw] py-[1.9vw] xss:py-[0.65rem] xss:px-[1.18rem] xs:px-[4.2vw] xs:py-[1.5vw] sm:px-[2rem] sm:py-[0.6rem] md:px-[2.5rem] md:py-[0.7rem] lg:px-[2.15rem] lg:py-[0.7rem] bg-[#158928] border border-[#158928] transition-all hover:scale-[1.03] hover:bg-[#1e802e] hover:border-[#1e802e] text-white text-[3.5vw] xs:text-[3vw] sm:text-[1rem] md:text-[1.2rem] font-pop font-medium rounded-full"
               >
                 Schedule a Meeting
-                <i className="ri-arrow-right-line ml-2 text-lg"></i>    
+                <i className="ri-arrow-right-line ml-2 text-lg"></i>
               </button>
             </div>
           </div>

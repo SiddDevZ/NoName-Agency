@@ -20,7 +20,7 @@ const Meetings = () => {
   }
   return (
     <div className="my-16 border-t border-b border-black/30">
-      <div className="my-16 flex flex-col items-center justify-center text-center gap-8 ">
+      <div className="my-16 flex flex-col items-center justify-center text-center gap-8">
         <h2 className="xl:text-[50px] md:text-[40px] text-[30px] font-[poppins] tracking-tight">
           <div>
             Your website is your{' '}
